@@ -48,7 +48,7 @@ var a = url.parse(address, true);
 app.get('/history',(req,res)=>{
     mongo.MongoClient.connect(uri,(err,db)=>{
     db.collection('imageHistory').find({}).toArray((err,result)=>{
-      console.log(result)
+      res.send(result)
     })
   })
 })
